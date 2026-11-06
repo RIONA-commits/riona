@@ -85,3 +85,6 @@ footer img{height:86px;border-radius:50%;background:var(--cream);padding:6px;mar
 #cart li{list-style:none;display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #e3dcc6;font:500 1rem var(--sans)}
 #cart li button{border:0;background:none;color:var(--green);cursor:pointer;font:600 1rem var(--sans)}
 #cart ul{padding:0;margin:16px 0}.tot{font:600 1.3rem var(--sans);color:var(--green);margin-bottom:16px}
+
+.vid{margin-top:34px;max-width:900px}.vid video{width:100%;display:block;border-radius:26px 26px 26px 4px;border:3px solid var(--green);background:var(--green);aspect-ratio:16/9}
+.vid .cap{font-weight:500;color:var(--green2);margin-top:10px;font-size:.98rem}
