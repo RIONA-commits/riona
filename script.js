@@ -1,5 +1,6 @@
 document.documentElement.classList.add('js');
 /* ===== EDIT THESE ===== */
+const CITIES=[['Accra','Africa/Accra'],['London','Europe/London'],['New York','America/New_York'],['Dubai','Asia/Dubai'],['Tokyo','Asia/Tokyo'],['Sydney','Australia/Sydney']]; /* edit the world clock cities here */
 const CONFIG={currency:'GH\u20B5',whatsapp:'233000000000',email:'hello@example.com'};
 /* ====================== */
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -54,3 +55,23 @@ draw();
 (()=>{const t=document.querySelector('.tag');if(!t)return;
 if(!('IntersectionObserver' in window)){t.classList.add('go');return}
 const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){t.classList.add('go');o.disconnect()}},{threshold:.35});o.observe(t)})();
+
+/* dark / light theme */
+(()=>{const b=document.getElementById('tm'),r=document.documentElement;if(!b)return;
+const sync=()=>b.setAttribute('aria-label',r.dataset.theme==='dark'?'Switch to light mode':'Switch to dark mode');sync();
+b.onclick=()=>{const n=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=n;try{localStorage.setItem('riona-theme',n)}catch(e){}sync()}})();
+/* world clock */
+(()=>{const g=document.getElementById('cg');if(!g)return;
+const tf=z=>new Intl.DateTimeFormat('en-GB',{timeZone:z,hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}),
+df=z=>new Intl.DateTimeFormat('en-GB',{timeZone:z,weekday:'short',day:'numeric',month:'short'}),
+hf=z=>new Intl.DateTimeFormat('en-GB',{timeZone:z,hour:'numeric',hour12:false});
+const mine=Intl.DateTimeFormat().resolvedOptions().timeZone||'UTC';
+const lf=new Intl.DateTimeFormat('en-GB',{timeZone:mine,weekday:'long',day:'numeric',month:'long',year:'numeric'});
+const cs=CITIES.map(([n,z])=>{const d=document.createElement('div');d.className='city';
+const b=document.createElement('b'),t=document.createElement('span'),dd=document.createElement('span'),i=document.createElement('i'),tx=document.createElement('span');
+t.className='t';dd.className='d';b.textContent=n;dd.append(i,tx);d.append(b,t,dd);g.append(d);return{d,t,tx,tf:tf(z),df:df(z),hf:hf(z)}});
+const mt=tf(mine);
+function tick(){const now=new Date();document.getElementById('yt').textContent=mt.format(now);
+document.getElementById('yd').textContent='Your time, '+lf.format(now)+' ('+mine.replace('_',' ')+')';
+cs.forEach(c=>{c.t.textContent=c.tf.format(now);const h=+c.hf.format(now)%24,day=h>=6&&h<18;c.d.classList.toggle('night',!day);c.tx.textContent=c.df.format(now)+' \u00b7 '+(day?'Day':'Night')})}
+tick();setInterval(tick,1000)})();
