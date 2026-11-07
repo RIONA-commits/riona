@@ -268,3 +268,23 @@ footer .social a{color:var(--gold2)}footer .social a:hover{background:var(--gold
 .tile.imgtile.cover img{left:14%;top:5%;width:72%;height:79%;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(0,0,0,.4))}
 .tile.imgtile.cover::before{content:"";position:absolute;inset:-14px;background:url(assets/digital-painting.jpg) center/cover;filter:blur(14px) brightness(.85)}
 .tile.imgtile span{left:50%;right:auto;transform:translateX(-50%);bottom:12px;white-space:nowrap;z-index:1}
+
+/* tutoring advert */
+:root{--pr:#7a1f1f}:root[data-theme=dark]{--pr:#f0b9a4}
+.tutor{margin-top:30px;padding:30px;border:2px solid var(--gt);border-radius:34px 34px 34px 6px;background:var(--paper)}
+.tutor h2{margin:6px 0 4px}.tutor .row{margin-top:20px}
+.tgal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;margin-top:26px}
+.tgal figure{margin:0;position:relative;border-radius:22px 22px 22px 4px;overflow:hidden;min-height:150px}.tgal figure.big{grid-row:1/3;border-radius:34px 34px 34px 6px}
+.tgal img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
+.tgal figcaption{position:absolute;left:10px;bottom:10px;background:var(--cream);color:#20463a;padding:2px 12px;border-radius:16px;font-weight:600;font-size:.88rem}
+.ph{margin:34px 0 10px;font-size:1.5rem}.ph span{font-size:.9rem;font-weight:500;color:var(--g2t);margin-left:8px}
+.tw{overflow-x:auto;border-radius:16px;border:1.5px solid var(--line)}
+.pt{width:100%;border-collapse:collapse;font:500 .95rem var(--sans);min-width:640px}
+.pt th{background:var(--green);color:var(--cream);text-align:left;padding:11px 12px;font-weight:600}
+.pt td{padding:10px 12px;border-bottom:1px solid var(--line);color:var(--ink)}.pt tr:nth-child(even) td{background:rgba(201,162,74,.12)}
+.pt th.p,.pt td.p{text-align:right}.pt td.c{font-weight:700;color:var(--gt)}.pt td.p{font-weight:700;color:var(--pr)}
+.adh{margin-top:60px}
+@media(max-width:760px){.tutor{padding:20px}.tgal{grid-template-columns:1fr 1fr;grid-template-rows:auto}.tgal figure.big{grid-column:1/3;grid-row:auto;min-height:230px}}
+.tgal figure:last-child{grid-column:2/4}
+@media(max-width:760px){.tgal figure:last-child{grid-column:auto}.tgal figure{min-height:150px}}
+[hidden]{display:none!important}

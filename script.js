@@ -94,3 +94,6 @@ const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){t.classList.add('go
 (()=>{const t=document.querySelector('.motto');if(!t)return;
 if(!('IntersectionObserver' in window)){t.classList.add('go');return}
 const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){t.classList.add('go');o.disconnect()}},{threshold:.35});o.observe(t)})();
+
+/* reveal bank details only on request */
+$$('[data-reveal]').forEach(b=>b.onclick=()=>{const t=document.getElementById(b.dataset.target);t.textContent=atob(b.dataset.reveal);t.hidden=false;b.hidden=true});
