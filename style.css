@@ -182,3 +182,31 @@ footer img{height:112px;width:auto;border-radius:18px;background:var(--cream);pa
 .fbar a{color:var(--gold2);text-underline-offset:3px}.fbar .sig{color:var(--gold);font-weight:600;font-style:italic}
 .legal{max-width:760px}.legal h2{font-size:1.35rem;margin-top:30px}.legal p,.legal ul{margin-top:10px}.legal ul{padding-left:22px;max-width:62ch}.legal li{margin-top:6px}.upd{color:var(--g2t);margin-top:8px;font-weight:500}
 footer p{margin-inline:auto}footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+
+/* social links */
+.social{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:18px auto 4px;max-width:900px}
+.social a{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1.5px solid var(--gold2);border-radius:30px;color:var(--gold2);text-decoration:none;font:500 .95rem var(--sans);transition:.2s}
+.social a:hover{background:var(--gold);color:#20463a;border-color:var(--gold)}
+.social svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* animated motto */
+.six{background:var(--gold);color:#20463a;overflow:hidden;text-align:center}.six .in{padding:84px 22px}
+.eye{width:clamp(110px,18vw,150px);margin:0 auto 18px}.eye svg{width:100%;overflow:visible}
+.eye .r{fill:none;stroke:#20463a;stroke-width:2;transform-origin:60px 60px;opacity:0}
+.eye .lid{fill:none;stroke:#20463a;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.eye .iris{fill:#20463a}.eye .pup{fill:var(--gold)}
+.six .sw{font:700 clamp(2.4rem,9vw,6rem)/1 var(--sans);letter-spacing:-.04em;color:#20463a;display:flex;justify-content:center;flex-wrap:wrap}
+.six .sw span{display:inline-block}
+.six .mot{font:500 clamp(1.4rem,4vw,2.5rem)/1.3 var(--sans);margin:18px auto 0;max-width:24ch}
+.six .mot em{font-style:normal;font-weight:700;position:relative;white-space:nowrap}
+.six .mot em::after,.six .mot s::after{content:"";position:absolute;left:0;right:0;height:4px;background:#7a1f1f;border-radius:3px;transform:scaleX(0);transform-origin:left}
+.six .mot em::after{bottom:-4px}.six .mot s{text-decoration:none;position:relative;white-space:nowrap}.six .mot s::after{top:52%;left:-3%;right:-3%}
+.js .six .sw span,.js .six .rv{opacity:0;transform:translateY(34px)}
+.js .six .lid{stroke-dasharray:1;stroke-dashoffset:1}
+.js .six .iris,.js .six .pup{transform:scale(0);transform-box:fill-box;transform-origin:50% 50%}
+.js .six.go .sw span,.js .six.go .rv{animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--d,0)*1ms)}
+.js .six.go .lid{animation:draw 1.1s ease-in-out forwards}
+.js .six.go .iris{animation:pop .6s cubic-bezier(.3,1.5,.5,1) 1s forwards}.js .six.go .pup{animation:pop .5s cubic-bezier(.3,1.5,.5,1) 1.3s forwards}
+.js .six.go .r{animation:ring 3.2s ease-out infinite;animation-delay:calc(1.6s + var(--d,0)*1s)}
+.js .six.go .mot em::after{animation:under .7s ease forwards 2.8s}.js .six.go .mot s::after{animation:under .6s ease forwards 3.3s}.js .six.go .mot s{animation:dim .6s ease forwards 3.3s}
+@keyframes ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(3.6);opacity:0}}@keyframes dim{to{opacity:.55}}
+@media(prefers-reduced-motion:reduce){.js .six .sw span,.js .six .rv{opacity:1!important;transform:none!important}.js .six .lid{stroke-dashoffset:0!important}.js .six .iris,.js .six .pup{transform:none!important}.js .six .mot em::after,.js .six .mot s::after{transform:none!important}.js .six .r{display:none}}

@@ -84,3 +84,8 @@ document.addEventListener('click',e=>{if(!wp.contains(e.target))close()});addEve
 $$('[data-contact]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();
 if(a.dataset.contact==='wa')window.open('https://wa.me/'+CONFIG.whatsapp+'?text='+encodeURIComponent('Hello riona, '),'_blank','noopener,noreferrer');
 else location.href='mailto:'+CONFIG.email}));
+
+/* motto animation starts when scrolled into view */
+(()=>{const t=document.querySelector('.six');if(!t)return;
+if(!('IntersectionObserver' in window)){t.classList.add('go');return}
+const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){t.classList.add('go');o.disconnect()}},{threshold:.4});o.observe(t)})();
