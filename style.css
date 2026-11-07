@@ -165,3 +165,7 @@ footer img{height:86px;border-radius:50%;background:var(--cream);padding:6px;mar
 .city .t{font:600 1.6rem/1.2 var(--sans);color:var(--ink);font-variant-numeric:tabular-nums}
 .city .d{font:500 .88rem var(--sans);color:var(--g2t);display:flex;align-items:center;gap:7px}
 .city .d i{width:9px;height:9px;border-radius:50%;background:var(--gold)}.city.night .d i{background:transparent;border:2px solid var(--g2t);box-shadow:inset -3px -1px 0 var(--g2t)}
+.feature .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0}
+.pair div{text-align:center}.pair img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:0;background:none;border-radius:0;filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
+.pair figcaption{font:500 .9rem var(--sans);color:var(--g2t);margin-top:4px}
+@media(max-width:760px){.feature .pair{gap:8px}}
