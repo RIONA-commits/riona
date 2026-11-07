@@ -1,3 +1,4 @@
+document.documentElement.classList.add('js');
 /* ===== EDIT THESE ===== */
 const CONFIG={currency:'GH\u20B5',whatsapp:'233000000000',email:'hello@example.com'};
 /* ====================== */
@@ -48,3 +49,8 @@ $('#wa').onclick=()=>{if(!cart.length)return;const t=cart.reduce((a,i)=>a+i.q*i.
 const m='Hello riona, I would like to order:\n'+cart.map(i=>i.q+' x '+i.n+' ('+money(i.q*i.p)+')').join('\n')+'\nTotal: '+money(t);
 window.open('https://wa.me/'+CONFIG.whatsapp+'?text='+encodeURIComponent(m),'_blank','noopener')};
 draw();
+
+/* start the tagline animation when it scrolls into view */
+(()=>{const t=document.querySelector('.tag');if(!t)return;
+if(!('IntersectionObserver' in window)){t.classList.add('go');return}
+const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){t.classList.add('go');o.disconnect()}},{threshold:.35});o.observe(t)})();

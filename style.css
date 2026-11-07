@@ -88,3 +88,57 @@ footer img{height:86px;border-radius:50%;background:var(--cream);padding:6px;mar
 
 .vid{margin-top:34px;max-width:900px}.vid video{width:100%;display:block;border-radius:26px 26px 26px 4px;border:3px solid var(--green);background:var(--green);aspect-ratio:16/9}
 .vid .cap{font-weight:500;color:var(--green2);margin-top:10px;font-size:.98rem}
+
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;margin-top:40px;padding:26px;background:var(--paper);border:2px solid var(--green);border-radius:34px 34px 34px 6px}
+.feature figure{margin:0}.feature img{width:100%;height:auto;display:block;border-radius:22px;border:1.5px solid #e3dcc6;background:#fff}
+.feature h2{margin:4px 0 4px}.feature .by{font-weight:600;color:var(--gold);margin-bottom:14px;filter:brightness(.8)}
+.feature blockquote{font:italic 1.15rem/1.5 var(--serif);border-left:4px solid var(--gold);padding-left:16px;margin:0 0 16px;color:var(--green)}
+.feature p+p{margin-top:12px}
+@media(max-width:760px){.feature{grid-template-columns:1fr;padding:18px}}
+
+.strip{height:16px;margin:26px 0 22px;border-radius:3px;background:repeating-linear-gradient(90deg,var(--green) 0 36px,var(--gold) 36px 48px,#7a1f1f 48px 60px,var(--gold) 60px 72px,var(--green) 72px 108px,var(--cream) 108px 114px)}
+.strip.thin{height:8px;margin:30px 0 0}
+.manifesto{font-weight:600;font-size:clamp(2rem,6vw,4rem);line-height:1.05;letter-spacing:-.03em;color:var(--green);margin-bottom:18px}
+.manifesto em{font-style:normal;color:var(--gold);filter:brightness(.82);border-bottom:6px solid #7a1f1f;padding-bottom:2px}
+.manifesto.sm{font-size:clamp(1.3rem,2.6vw,1.7rem);line-height:1.2;margin:6px 0 14px;letter-spacing:-.02em}.manifesto.sm em{border-bottom-width:4px}
+.strip{margin-bottom:0}
+.feature.rev figure{order:2}.feature.rev img{max-height:640px;object-fit:cover;object-position:top}
+@media(max-width:760px){.feature.rev figure{order:0}}
+
+/* animated tagline */
+.tag{background:var(--green);color:var(--cream);overflow:hidden;position:relative}
+.tag::before,.tag::after{content:"";position:absolute;left:50%;top:50%;border-radius:50%;pointer-events:none}
+.tag::before{width:560px;height:560px;margin:-280px 0 0 -280px;border:2px dashed rgba(201,162,74,.35);animation:spin 70s linear infinite}
+.tag::after{width:380px;height:380px;margin:-190px 0 0 -190px;border:1.5px solid rgba(230,212,160,.25);animation:spin 45s linear infinite reverse}
+.tag .in{position:relative;text-align:center;padding:92px 22px;z-index:1}
+.tagline{display:flex;justify-content:center;align-items:flex-end;gap:clamp(20px,6vw,70px);flex-wrap:wrap}
+.tagline .w{display:grid;justify-items:center;gap:14px}
+.tagline svg{width:clamp(72px,12vw,118px);height:auto;overflow:visible}
+.tagline b{font:600 clamp(2.2rem,7vw,4.6rem)/1 var(--sans);letter-spacing:-.03em;color:var(--cream)}
+.tagline .w:nth-child(3) b{color:var(--gold)}
+.tag .sub{font:500 clamp(1.2rem,3vw,1.9rem)/1.35 var(--sans);color:var(--gold2);margin:34px auto 0;max-width:30ch}
+.tag .sub em{font-style:normal;color:var(--gold);position:relative;white-space:nowrap}
+.tag .sub em::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:4px;border-radius:3px;background:var(--gold);transform:scaleX(0);transform-origin:left}
+.tag svg .g{stroke:var(--gold);stroke-width:7;stroke-linecap:round;fill:none}
+.tag svg .cr{fill:var(--cream)}.tag svg .pet{fill:var(--gold)}
+.tag svg .pg{fill:var(--cream);stroke:var(--gold);stroke-width:3;stroke-linejoin:round}
+.js .tag .rv{opacity:0;transform:translateY(28px)}
+.js .tag .d{stroke-dasharray:1;stroke-dashoffset:1}
+.js .tag .pop,.js .tag .pet{transform:scale(0);transform-box:fill-box;transform-origin:50% 100%}
+.js .tag .pop{transform-origin:50% 50%}
+.js .tag .pg{transform:scaleX(0);transform-box:fill-box}
+.js .tag .pg.l{transform-origin:100% 50%}.js .tag .pg.r{transform-origin:0 50%}
+.js .tag.go .rv{animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--d,0)*1ms)}
+.js .tag.go .d{animation:draw 1s ease-in-out forwards;animation-delay:calc(var(--d,0)*1ms)}
+.js .tag.go .pop,.js .tag.go .pet{animation:pop .6s cubic-bezier(.3,1.5,.5,1) forwards;animation-delay:calc(var(--d,0)*1ms)}
+.js .tag.go .pg{animation:page .7s cubic-bezier(.2,.8,.3,1) forwards;animation-delay:calc(var(--d,0)*1ms)}
+.js .tag.go .sub em::after{animation:under .8s ease forwards 2.4s}
+.js .tag.go .bloom{transform-origin:50% 100%;animation:sway 4.5s ease-in-out 3s infinite alternate}
+@keyframes rise{to{opacity:1;transform:none}}@keyframes draw{to{stroke-dashoffset:0}}@keyframes pop{to{transform:scale(1)}}
+@keyframes page{to{transform:scaleX(1)}}@keyframes under{to{transform:scaleX(1)}}@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes sway{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+/* hero entrance */
+.js .hero>div>*,.js .hero .logo{opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.js .hero>div>*:nth-child(1){animation-delay:.1s}.js .hero>div>*:nth-child(2){animation-delay:.3s}.js .hero>div>*:nth-child(3){animation-delay:.5s}.js .hero .logo{animation-delay:.35s}
+@media(prefers-reduced-motion:reduce){.js .tag .rv,.js .hero>div>*,.js .hero .logo{opacity:1!important;transform:none!important}
+.js .tag .d{stroke-dashoffset:0!important}.js .tag .pop,.js .tag .pet{transform:scale(1)!important}.js .tag .pg{transform:none!important}.js .tag .sub em::after{transform:none!important}}
