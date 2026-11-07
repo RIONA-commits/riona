@@ -256,3 +256,15 @@ footer .social a{color:var(--gold2)}footer .social a:hover{background:var(--gold
 .js .motto.go .eye{animation:glow 3.2s ease-in-out 3s infinite}
 @keyframes fadewk{to{opacity:.5}}@keyframes glow{50%{filter:drop-shadow(0 0 10px rgba(247,243,232,.9));transform:scale(1.06)}}
 @media(prefers-reduced-motion:reduce){.js .motto .rv{opacity:1!important;transform:none!important}.js .motto .d{stroke-dashoffset:0!important}.js .motto .iris,.js .motto .pupil,.js .motto .shine{transform:scale(1)!important}.js .motto .ri::after,.js .motto .wk::after{transform:none!important}}
+.feature{scroll-margin-top:90px}
+.tile.imgtile{padding:0;text-decoration:none;display:block}.tile.imgtile img{position:absolute;inset:3%;width:94%;height:94%;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35));transition:transform .35s}
+.tile.imgtile:hover img{transform:scale(1.05) rotate(-1deg)}
+.tile.imgtile span{position:absolute;left:14px;bottom:12px;background:var(--cream);color:#20463a;padding:3px 13px;border-radius:20px;font:600 .95rem var(--sans)}
+.tile.imgtile.cover img{inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:none}
+.tile.imgtile.cover span{background:var(--gold);color:#20463a}
+#digital-painting.feature.rev img{max-height:none;object-fit:contain}
+/* image tiles: show the whole artwork, label in its own strip */
+.tile.imgtile img{position:absolute;inset:auto;left:4%;top:4%;width:92%;height:78%;object-fit:contain;object-position:50% 50%}
+.tile.imgtile.cover img{left:14%;top:5%;width:72%;height:79%;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(0,0,0,.4))}
+.tile.imgtile.cover::before{content:"";position:absolute;inset:-14px;background:url(assets/digital-painting.jpg) center/cover;filter:blur(14px) brightness(.85)}
+.tile.imgtile span{left:50%;right:auto;transform:translateX(-50%);bottom:12px;white-space:nowrap;z-index:1}
