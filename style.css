@@ -223,3 +223,36 @@ footer p{margin-inline:auto}footer{padding-bottom:calc(84px + env(safe-area-inse
 .hsix .mot{font-size:clamp(1.15rem,2.4vw,1.7rem);max-width:22ch}
 .hsix .mot em::after,.hsix .mot s::after{background:#a8342a}
 .wm{-webkit-mask-image:radial-gradient(closest-side,#000 50%,transparent 98%);mask-image:radial-gradient(closest-side,#000 50%,transparent 98%)}
+
+/* motto band + socials */
+.motto{background:var(--gold);color:#20463a;position:relative;overflow:hidden}
+.motto .in{text-align:center;padding:84px 22px 78px}
+.motto .eye{width:clamp(90px,14vw,130px);height:auto;overflow:visible;margin-bottom:10px}
+.motto .eye .lid,.motto .eye .ray{fill:none;stroke:#20463a;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}
+.motto .eye .iris{fill:#20463a}.motto .eye .pupil{fill:var(--gold)}.motto .eye .shine{fill:var(--cream)}
+.motto .mk{font-weight:600;font-size:clamp(1.05rem,2.6vw,1.4rem);letter-spacing:.32em;color:#20463a;margin:6px 0 14px;max-width:none}
+.motto .ms{font-weight:600;font-size:clamp(1.9rem,5.6vw,3.7rem);line-height:1.15;letter-spacing:-.03em;color:#20463a;max-width:18ch;margin:0 auto}
+.motto .ms span{display:inline-block}
+.motto .ri{font-style:normal;position:relative}
+.motto .ri::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:5px;border-radius:3px;background:#20463a;transform:scaleX(0);transform-origin:left}
+.motto .wk{text-decoration:none;position:relative;display:inline-block}
+.motto .wk::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:5px;border-radius:3px;background:#7a1f1f;transform:scaleX(0);transform-origin:left}
+.motto .cn{font-weight:500;margin:34px 0 0;font-size:1.05rem;color:#20463a;max-width:none}
+.motto .social{margin-top:14px}
+.social{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+.social a{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:30px;border:1.5px solid currentColor;text-decoration:none;font:500 .92rem var(--sans);color:inherit;transition:.2s;word-break:break-all}
+.social svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+footer .social a{color:var(--gold2)}footer .social a:hover{background:var(--gold);border-color:var(--gold);color:#20463a}
+.motto .social a:hover{background:#20463a;border-color:#20463a;color:var(--cream)}
+.js .motto .rv{opacity:0;transform:translateY(26px)}
+.js .motto .d{stroke-dasharray:1;stroke-dashoffset:1}
+.js .motto .iris,.js .motto .pupil,.js .motto .shine{transform:scale(0);transform-box:fill-box;transform-origin:50% 50%}
+.js .motto.go .rv{animation:rise .85s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--d,0)*1ms)}
+.js .motto.go .d{animation:draw .9s ease-in-out forwards;animation-delay:calc(var(--d,0)*1ms)}
+.js .motto.go .iris,.js .motto.go .pupil,.js .motto.go .shine{animation:pop .6s cubic-bezier(.3,1.5,.5,1) forwards;animation-delay:calc(var(--d,0)*1ms)}
+.js .motto.go .ri::after{animation:under .7s ease forwards 2.1s}
+.js .motto.go .wk::after{animation:under .6s ease forwards 2.6s}
+.js .motto.go .wk{animation:fadewk .6s ease forwards 2.7s}
+.js .motto.go .eye{animation:glow 3.2s ease-in-out 3s infinite}
+@keyframes fadewk{to{opacity:.5}}@keyframes glow{50%{filter:drop-shadow(0 0 10px rgba(247,243,232,.9));transform:scale(1.06)}}
+@media(prefers-reduced-motion:reduce){.js .motto .rv{opacity:1!important;transform:none!important}.js .motto .d{stroke-dashoffset:0!important}.js .motto .iris,.js .motto .pupil,.js .motto .shine{transform:scale(1)!important}.js .motto .ri::after,.js .motto .wk::after{transform:none!important}}

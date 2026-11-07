@@ -89,3 +89,8 @@ else location.href='mailto:'+CONFIG.email}));
 (()=>{const t=document.querySelector('.six');if(!t)return;
 if(!('IntersectionObserver' in window)){t.classList.add('go');return}
 const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){t.classList.add('go');o.disconnect()}},{threshold:.4});o.observe(t)})();
+
+/* motto animation starts when scrolled into view */
+(()=>{const t=document.querySelector('.motto');if(!t)return;
+if(!('IntersectionObserver' in window)){t.classList.add('go');return}
+const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){t.classList.add('go');o.disconnect()}},{threshold:.35});o.observe(t)})();
