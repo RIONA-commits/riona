@@ -288,3 +288,43 @@ footer .social a{color:var(--gold2)}footer .social a:hover{background:var(--gold
 .tgal figure:last-child{grid-column:2/4}
 @media(max-width:760px){.tgal figure:last-child{grid-column:auto}.tgal figure{min-height:150px}}
 [hidden]{display:none!important}
+
+/* brush, book, bloom in the menu pane */
+.navtag svg .g{stroke:var(--gold);stroke-width:7;stroke-linecap:round;fill:none}
+.navtag svg .cr{fill:var(--cream)}.navtag svg .pet{fill:var(--gold)}
+.navtag svg .pg{fill:var(--cream);stroke:var(--gold);stroke-width:3;stroke-linejoin:round}
+.js .navtag .rv{opacity:0;transform:translateY(28px)}
+.js .navtag .d{stroke-dasharray:1;stroke-dashoffset:1}
+.js .navtag .pop,.js .navtag .pet{transform:scale(0);transform-box:fill-box;transform-origin:50% 100%}
+.js .navtag .pop{transform-origin:50% 50%}
+.js .navtag .pg{transform:scaleX(0);transform-box:fill-box}
+.js .navtag .pg.l{transform-origin:100% 50%}.js .navtag .pg.r{transform-origin:0 50%}
+.js nav.open .navtag .rv{animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--d,0)*1ms)}
+.js nav.open .navtag .d{animation:draw 1s ease-in-out forwards;animation-delay:calc(var(--d,0)*1ms)}
+.js nav.open .navtag .pop,.js nav.open .navtag .pet{animation:pop .6s cubic-bezier(.3,1.5,.5,1) forwards;animation-delay:calc(var(--d,0)*1ms)}
+.js nav.open .navtag .pg{animation:page .7s cubic-bezier(.2,.8,.3,1) forwards;animation-delay:calc(var(--d,0)*1ms)}
+.js nav.open .navtag .bloom{transform-origin:50% 100%;animation:sway 4.5s ease-in-out 3s infinite alternate}
+@keyframes rise{to{opacity:1;transform:none}}@keyframes draw{to{stroke-dashoffset:0}}@keyframes pop{to{transform:scale(1)}}
+@keyframes page{to{transform:scaleX(1)}}@keyframes under{to{transform:scaleX(1)}}@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes sway{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+.navtag{margin-top:34px;padding-top:26px;border-top:2px solid rgba(201,162,74,.5);max-width:620px}
+.navtag .tl{display:flex;gap:clamp(18px,5vw,40px);flex-wrap:wrap;align-items:flex-end}
+.navtag .w{display:grid;justify-items:center;gap:6px}
+.navtag svg{width:clamp(48px,9vw,66px);height:auto;overflow:visible}
+.navtag b{font:600 clamp(1.3rem,4vw,1.8rem)/1 var(--sans);letter-spacing:-.02em;color:var(--cream)}
+.navtag .w:nth-child(3) b{color:var(--gold)}
+.navtag .sub{font:500 1.02rem/1.4 var(--sans);color:var(--gold2);margin-top:14px;max-width:34ch}
+.navtag .sub em{font-style:normal;color:var(--gold)}
+@media(prefers-reduced-motion:reduce){.js .navtag .rv{opacity:1!important;transform:none!important}.js .navtag .d{stroke-dashoffset:0!important}.js .navtag .pop,.js .navtag .pet{transform:scale(1)!important}.js .navtag .pg{transform:none!important}}
+footer .cn2{color:var(--gold2);font-weight:600;margin:18px auto 0;max-width:none}
+footer .social{margin-top:10px}
+@media(min-width:900px){nav .wrap{max-width:1040px;grid-template-columns:1fr 1.1fr;column-gap:50px;align-content:start}
+nav .wrap>a,nav .wrap>small{grid-column:1}
+nav .wrap>.navtag{grid-column:2;grid-row:1/span 16;align-self:center;margin-top:0;padding:34px;border:2px solid rgba(201,162,74,.5);border-radius:34px 34px 34px 6px;background:rgba(0,0,0,.14)}
+.navtag svg{width:clamp(60px,6vw,84px)}.navtag b{font-size:clamp(1.5rem,2.6vw,2.2rem)}.navtag .sub{font-size:1.15rem}}
+
+.social .ico{width:28px;height:28px;border-radius:50%;display:inline-grid;place-items:center;flex:none}
+.social .ico svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.social .ico.tt{background:#000}.social .ico.tt svg{width:18px;height:18px;stroke:none}
+.social .ico.ig{background:linear-gradient(45deg,#f9ce34 0%,#ee2a7b 50%,#6228d7 100%)}
+.social a{padding-left:10px}
