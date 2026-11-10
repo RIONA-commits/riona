@@ -82,7 +82,7 @@ document.addEventListener('click',e=>{if(!wp.contains(e.target))close()});addEve
 
 /* contact buttons: the link is only built when someone clicks */
 $$('[data-contact]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();
-if(a.dataset.contact==='wa')window.open('https://wa.me/'+CONFIG.whatsapp+'?text='+encodeURIComponent('Hello riona, '),'_blank','noopener,noreferrer');
+if(a.dataset.contact==='wa')window.open('https://wa.me/'+CONFIG.whatsapp+'?text='+encodeURIComponent(a.dataset.msg||'Hello riona, '),'_blank','noopener,noreferrer');
 else location.href='mailto:'+CONFIG.email}));
 
 /* motto animation starts when scrolled into view */
